@@ -7,9 +7,9 @@ This log is intentionally written as an engineering record rather than a launch 
 ## [1.0.0] - 2026-05-12
 
 ### Released
-- Published \$name\ as a public, portfolio-grade identity governance system.
+- Published **haskell-policy-engine** as a public, portfolio-grade identity governance system.
 - Packaged the current implementation, documentation, validation workflow, and proof surfaces into a repo that could be reviewed by engineering, product, and operating stakeholders.
-- Tightened the repo story around the real-world operating problem: identity sprawl, tenant-boundary risk, and access-review friction were increasing faster than review workflows could absorb.
+- Tightened the repo story around the real-world operating problem: identity sprawl, tenant-boundary risk, and access-review friction.
 
 ### Why this mattered
 - Existing approaches in IGA suites, ticket-based approvals, and access review campaigns were useful, but they handled process and storage, but not the operator need for fast, explainable control decisions.
@@ -18,7 +18,7 @@ This log is intentionally written as an engineering record rather than a launch 
 ## [0.1.0] - 2026-02-15
 
 ### Shipped
-- Cut the first coherent internal version of the product shape behind \$name\.
+- Cut the first coherent internal version of the product shape behind **haskell-policy-engine**.
 - Standardized the core objects, decision surfaces, and operator outputs around the repo's main working problem.
 - Established the first reviewable version of the architecture described as: Type-safe policy DSL in Haskell. Algebraic data type Policy = Allow | Deny | When; predicates compose via And/Or/Not; pure total evaluator; Aeson JSON codec; Hspec + QuickCheck tests. Functional purity flex for the agent-governance theme.
 
@@ -55,12 +55,12 @@ This log is intentionally written as an engineering record rather than a launch 
 ## [Idea Origin] - 2022-02-11
 
 ### Observed
-- The initial idea surfaced while looking at how teams were handling identity sprawl, tenant-boundary risk, and access-review friction were increasing faster than review workflows could absorb.
+- The initial idea surfaced while looking at how teams were handling identity sprawl, tenant-boundary risk, and access-review friction.
 - The recurring pattern was that people could often see fragments of the problem, but not the whole operational story in one place.
 
 ### Insight
 - The missing product was not another point solution. It was a clearer operating layer that made the work legible to IAM, platform security, and compliance teams.
-- That insight became the basis for \$name\.
+- That insight became the basis for **haskell-policy-engine**.
 
 ## [Background Signals] - 2022-08-09
 
