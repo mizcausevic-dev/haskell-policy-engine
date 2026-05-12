@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: haskell-actions/setup@v2
+        with:
+          ghc-version: '9.6.4'
+          enable-stack: true
+          stack-version: 'latest'
+      - run: stack --no-terminal --version
+      - run: stack --no-terminal build --fast --no-run-tests --test
+      - run: stack --no-terminal test --fast
+      - run: stack --no-terminal exec policy-cli

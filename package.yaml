@@ -1,0 +1,52 @@
+name:                haskell-policy-engine
+version:             0.1.0
+synopsis:            Type-safe policy DSL — evaluate, serialize, and round-trip access-control policies in Haskell.
+description:         A small algebraic data type for declarative access-control policies (allow / deny / when-predicate),
+                     with a pure evaluator, a JSON codec via Aeson, and Hspec + QuickCheck property tests.
+license:             AGPL-3.0
+author:              Miz Causevic
+copyright:           (c) 2026 Miz Causevic
+github:              mizcausevic-dev/haskell-policy-engine
+
+extra-source-files:
+- README.md
+
+dependencies:
+- base >= 4.16 && < 5
+- aeson >= 2.0
+- text >= 2.0
+- bytestring >= 0.11
+- containers >= 0.6
+
+library:
+  source-dirs: src
+  ghc-options:
+    - -Wall
+    - -Wcompat
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wredundant-constraints
+
+executables:
+  policy-cli:
+    source-dirs: app
+    main: Main.hs
+    dependencies:
+      - haskell-policy-engine
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+
+tests:
+  haskell-policy-engine-test:
+    source-dirs: test
+    main: Spec.hs
+    dependencies:
+      - haskell-policy-engine
+      - hspec >= 2.10
+      - QuickCheck >= 2.14
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N

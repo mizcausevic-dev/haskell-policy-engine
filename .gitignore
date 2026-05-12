@@ -1,0 +1,9 @@
+dist/
+dist-newstyle/
+.stack-work/
+*.hi
+*.o
+.cabal-sandbox/
+cabal.sandbox.config
+.ghc.environment.*
+.DS_Store
